@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Post;
 use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use function Symfony\Component\String\u;
@@ -17,7 +18,13 @@ class PostRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Post::class);
     }
-
+    public function findByTitleDesc()
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.postTitle', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
 
 
     //    /**
