@@ -27,8 +27,8 @@ USE `coucousymfonyg2`;
 
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE IF NOT EXISTS `comment` (
-                                         `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-                                         `comment_message` varchar(2500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  'id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+    `comment_message` varchar(2500) COLLATE utf8mb4_unicode_ci NOT NULL,
     `comment_date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `post_id` int UNSIGNED NOT NULL,
     `user_id` int UNSIGNED NOT NULL,
